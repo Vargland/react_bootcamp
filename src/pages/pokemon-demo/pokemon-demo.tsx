@@ -6,8 +6,8 @@ import { TRANSLATE } from "../../constants/translates"
 
 const PokemonDemoPage = () => {
     const { data, isLoading } = useGetAllPokemons()
-    const { t } = useTranslation(TRANSLATE.COMMON);
 
+    const { t } = useTranslation(TRANSLATE.COMMON);
 
     const navigate = useNavigate()
 

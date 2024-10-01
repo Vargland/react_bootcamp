@@ -6,19 +6,20 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-import App from './App.tsx'
 import './index.css'
 import '../i18n.ts';
 
-import PokemonDemoPage from './pages/pokemon-demo/pokemon-demo.tsx';
 import { ROUTES } from './constants/routes.ts';
+
+import PokemonDemoPage from './pages/pokemon-demo/pokemon-demo.tsx';
+import Home from './pages/home/home.tsx';
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
     {
         path: ROUTES.ROOT,
-        element: <App />,
+        element: <Home />,
     },
     {
         path: ROUTES.POKEMON,
