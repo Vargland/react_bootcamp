@@ -15,6 +15,14 @@ const viteConfig = defineConfig(defaultConfig => {
       react(),
     ],
     // This is for a problem with the poppers.js random, maybe can fixed with a new versions of vite and material.
+    optimizeDeps: {
+      include: ['@mui/material/Tooltip'
+      ],
+    }
+  }
+
+  if (defaultConfig.mode === 'development') {
+    config.define.global = 'window'
   }
 
   return config
