@@ -1,5 +1,4 @@
 {
-    "COMMON": {
-        "HELLO_WORLD": "Hola Mundo"
-    }
+    "HELLO_WORLD": "Hola Mundo",
+    "SWITCH_LANGUAGE": "cambiar lenguaje a {{lng}}"
 }
