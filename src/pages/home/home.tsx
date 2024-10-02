@@ -1,16 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
 import { TRANSLATE } from '../../constants/translates';
 import { ROUTES } from '../../constants/routes';
+import { LANGUAGE } from '../../constants/language';
 import { StyledButton, StyledContainerButtons, StyledHomeContainer } from './home.style';
+import { languageMap } from './home.constants';
+
 
 function Home() {
     const { t, i18n } = useTranslation(TRANSLATE.COMMON);
 
     const navigate = useNavigate()
 
-    const handleSwitchLanguage = (lng: string) => {
-        i18n.changeLanguage(lng === 'es' ? 'en' : 'es' )
+    const handleSwitchLanguage = () => {
+        const newLanguage = i18n.language === LANGUAGE.ES ? LANGUAGE.EN : LANGUAGE.ES;  
+
+        i18n.changeLanguage(newLanguage)
     }
 
     const handleNavigate = () => {
@@ -21,7 +27,7 @@ function Home() {
         <StyledHomeContainer>
             <div>{t('HELLO_WORLD')}</div>
             <StyledContainerButtons>
-                <StyledButton onClick={() => handleSwitchLanguage(i18n.language)}>{t('SWITCH_LANGUAGE', { lng: i18n.language === 'es' ? 'ENG' : "ESP" })} </StyledButton>
+                <StyledButton onClick={handleSwitchLanguage}>{t('SWITCH_LANGUAGE', { language: i18n.language === LANGUAGE.ES ? languageMap[LANGUAGE.EN] : languageMap[LANGUAGE.ES] })}</StyledButton>
                 <StyledButton onClick={handleNavigate} $primary>{t('GO_TO_POKEMON')} </StyledButton>
             </StyledContainerButtons>
         </StyledHomeContainer>
