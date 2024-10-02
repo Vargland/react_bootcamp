@@ -18,10 +18,10 @@ const PokemonDemoPage = () => {
     return (
         <>
             {isLoading && <div> LOADING ...</div >}
-            {!isLoading && data?.results && data?.results.map(({ name }: { name: string }) => {
-                return (<div> {name}</div>)
+            {!isLoading && data && data?.results.map(({ name }, index) => {
+                return (<div key={index}> {name}</div>)
             })}
-                <button onClick={handleNavigate}>{t('GO_BACK')} </button>
+            <button onClick={handleNavigate}>{t('GO_BACK')} </button>
         </>
     )
 }

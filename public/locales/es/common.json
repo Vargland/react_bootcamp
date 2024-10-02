@@ -1,6 +1,6 @@
 {
     "GO_BACK": "Regresar",
-    "HELLO_WORLD": "Hola Mundo",
-    "SWITCH_LANGUAGE": "cambiar lenguaje a {{lng}}",
-    "GO_TO_POKEMON": "ir a pokemon demo"
+    "GO_TO_POKEMON": "Ir a pokemon demo",
+    "HELLO_WORLD": "Hola mundo",
+    "SWITCH_LANGUAGE": "Cambiar lenguaje a {{language}}"
 }

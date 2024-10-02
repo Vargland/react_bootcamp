@@ -2,14 +2,12 @@ import { client } from "./config/client.config"
 
 import { useQuery } from "react-query"
 
-const fetchPokemons = (): Promise<unknown[]> => {
-    return client.get('/pokemon').then((response) => response.data)
+import { ALL_POKEMONS, AllPokemonsRespomse } from "./use-get-all-pokemons.constants";
+
+const getAllPokemons = (): Promise<AllPokemonsRespomse> => {
+    return client.get('/pokemon');
 }
 
 export const useGetAllPokemons = () => {
-    const onSuccess = (data: any) => {
-        return data.results
-    }
-
-    return useQuery({ queryKey: ['all_pokemon'], queryFn: fetchPokemons, onSuccess })
+    return useQuery({ queryKey: [ALL_POKEMONS], queryFn: getAllPokemons })
 }
